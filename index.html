@@ -8,10 +8,11 @@
 	  body{
 /*           background:#b8b1b1; */
        background:white;
+       background:url(./img/masai.png);
 	  }
      #myCanvas{
         display:block;
-        margin:70px 50px;
+        margin:50px auto;
      }
      /*******图片上传按钮******/
       .fileBtn {
@@ -31,7 +32,9 @@
         }
      /*滑块组件开始布局*/
       .slideBar {
+
             margin: 50px auto;
+            margin-top: 20px;
             width: 350px;
             height: 10px;
             background: rgba(173, 216, 230, 1);
@@ -106,8 +109,8 @@
               var oCxt=oC.getContext('2d');
 
              //设置canvas画布大小
-              oC.width=obj.width*3;
-              oC.height=obj.height;
+              oC.width=obj.width/2;
+              oC.height=obj.height/2*3;
               //将上传的图片重绘到画板上
               oCxt.drawImage(obj,0,0,obj.width/2,obj.height/2);
              
@@ -136,7 +139,7 @@
               	   }
                }
                      
-            oCxt.putImageData(oNewImageData,obj.width/2+50,0);       
+            oCxt.putImageData(oNewImageData,0,obj.height/2+30);       
               
 			}
 //获取指定坐标位置的像素信息
@@ -260,7 +263,8 @@
         <div class="sliderProcess"></div>
     </div>
    
-   
+  <div id="canvas-wrap">
     <canvas id="myCanvas" width="600" height="600"></canvas>
+  </div>
 </body>
 </html>
